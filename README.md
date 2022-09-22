@@ -86,7 +86,7 @@ Finding euiguen vector when $\lambda = 1+i\sqrt3$, we have
 
 $$(A- (1+i\sqrt3) I)x = 0 =>
 \begin{pmatrix}
--i\sqrt(3) & 0 & 2 \\
+-i\sqrt3 & 0 & 2 \\
 0 & -i\sqrt3 & -1\\
 -1 & 1 &-i\sqrt3 \\
 \end{pmatrix}
@@ -166,6 +166,9 @@ $$
 
 The 6x6 matrix was obtained by getting the constats of each row  near $a_k,b_k$ and $ia_k, ib_k$, $\forall k \in {1,2,3}$ . So each row of a 3x3 matrix is divided into two rows, the first row with only real constants near $a_k,b_k$, and the second row with constants near $ia_k,ib_k$.
 
+![matrixca 3](https://user-images.githubusercontent.com/84543584/191829991-9627917b-5ff6-4f71-9c39-f25acb6e59ac.png)
+
+
 ### Making the expanding algorithm
 
 Let $z_{ij}=c_{ij} + id_{ij} \in A, \forall i,j \in {{1,2,3}}$
@@ -173,7 +176,7 @@ Note that
 
  $z_{ij}(a_j+ib_j) = (c_{ij}+id_{ij})(a_j+ib_j) = {\color{red}c_{ij}}a_j + i{\color{blue}d_{ij}}a_j -{\color{red}d_{ij}}b_j+i{\color{blue}c_{ij}}b_j$
  
- So for the i-th row of 3x3 matrix in (1), we know now the coefficients near $a_j,b_j,ia_j,ib_j$, which are $c_{ij},-d_{ij},d_{ij},c_{ij}$, which is $Re(z),-Im(z),Im(z),Re(z)$ respectivlly.
+ So for the i-th row of 3x3 matrix in (1), we know now the coefficients near $a_j,b_j,ia_j,ib_j$, which are $c_{ij},-d_{ij},d_{ij},c_{ij}$, which is $Re(z),-Im(z),Im(z),Re(z)$ respectfully.
  Now based on this rule, we iterate through each element of the matrix A in (1) and fill it the 6x6 matrix with constants near $a_k,b_k$ and $ia_k, ib_k$.
   
     public Matrix expandToReal() {
